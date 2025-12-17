@@ -1718,59 +1718,29 @@
 .end method
 
 .method public declared-synchronized isDebugAlarmOn()Z
-    .locals 2
+    .locals 1
 
     monitor-enter p0
 
-    :try_start_0
-    const-string v0, "debugAlarm"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lcom/samsung/android/sdk/smp/common/interfaces/SharedDataManager;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    # Modified to always return true for debug mode
+    const/4 v0, 0x1
 
     monitor-exit p0
 
     return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 .method public declared-synchronized isDebugJobOn()Z
-    .locals 2
+    .locals 1
 
     monitor-enter p0
 
-    :try_start_0
-    const-string v0, "debugJob"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lcom/samsung/android/sdk/smp/common/interfaces/SharedDataManager;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    # Modified to always return true for debug mode
+    const/4 v0, 0x1
 
     monitor-exit p0
 
     return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 .method public declared-synchronized isPpmtDataMigrated()Z
