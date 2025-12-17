@@ -621,22 +621,8 @@
 .method private static isDebugPolicyOn(Landroid/content/Context;Z)Z
     .locals 0
 
-    invoke-static {p0}, Lcom/samsung/android/sdk/smp/common/preference/PrefManager;->getInstance(Landroid/content/Context;)Lcom/samsung/android/sdk/smp/common/preference/PrefManager;
-
-    move-result-object p0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lcom/samsung/android/sdk/smp/common/preference/PrefManager;->isDebugJobOn()Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/samsung/android/sdk/smp/common/preference/PrefManager;->isDebugAlarmOn()Z
-
-    move-result p0
+    # Modified to always return true for debug mode
+    const/4 p0, 0x1
 
     return p0
 .end method

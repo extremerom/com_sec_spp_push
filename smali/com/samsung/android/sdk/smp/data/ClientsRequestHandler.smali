@@ -202,9 +202,8 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
+    # Modified to accept any token - skip isEmpty check
+    const/4 v3, 0x0
 
     if-nez v3, :cond_3
 

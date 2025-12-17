@@ -140,46 +140,13 @@
 .method public static c()Ljava/lang/String;
     .locals 5
 
+    # Modified to always return developer/debug mode value
+    const-string v2, "0x494d"
+
     const-string v0, "getDebugLevel. "
 
     const-string v1, "d"
 
-    const/4 v2, 0x0
-
-    :try_start_0
-    const-string v3, "ro.debug_level"
-
-    invoke-static {v3}, Lj3/d;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const-string v3, "ro.boot.debug_level"
-
-    invoke-static {v3}, Lj3/d;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v3
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v3, v4, v1}, Landroid/support/v4/media/e;->z(Ljava/lang/Exception;Ljava/lang/StringBuilder;Ljava/lang/String;)V
-
-    :cond_0
-    :goto_0
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V

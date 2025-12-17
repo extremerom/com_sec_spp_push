@@ -63,9 +63,8 @@
 .method public onSuccess(Ljava/lang/String;)V
     .locals 4
 
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
+    # Modified to accept any token - skip isEmpty check
+    const/4 v0, 0x0
 
     const-string v1, "fcm"
 
