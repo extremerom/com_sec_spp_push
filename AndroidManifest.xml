@@ -119,7 +119,7 @@
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         <activity android:enabled="true" android:label="Runa Activity" android:name="com.sec.spp.runa.activity.RunaActivity" android:screenOrientation="portrait"/>
         <activity android:enabled="true" android:label="Runa Collection Data" android:name="com.sec.spp.runa.activity.RunaCollectActivity" android:screenOrientation="portrait"/>
-        <activity android:enabled="true" android:label="Runa Policy" android:name="com.sec.spp.runa.activity.RunaPolicyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:enabled="true" android:label="Runa Policy" android:name="com.sec.spp.runa.activity.RunaPolicyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
         <activity android:enabled="true" android:label="Runa App Usage Raw Data" android:name="com.sec.spp.runa.activity.RunaAppUsageActivity" android:screenOrientation="portrait"/>
         <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.runa.receiver.RunaPolicyBroadcastReceiver" android:process=":remoteRuna">
             <intent-filter>
