@@ -562,11 +562,8 @@
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const-string p1, "test_activity"
-
-    invoke-static {p1, v1}, Lcom/sec/spp/common/pref/CommonPrefProvider;->b(Ljava/lang/String;Z)Z
-
-    move-result p1
+    # Always enable test mode menu - bypass preference check
+    const/4 p1, 0x1
 
     if-eqz p1, :cond_2
 
