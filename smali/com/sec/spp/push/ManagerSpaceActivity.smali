@@ -491,28 +491,8 @@
 
     sget p1, Lcom/sec/spp/common/pref/CommonPrefProvider;->a:I
 
-    invoke-static {}, Lj3/d;->w()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    const-string p1, "CommonPrefProvider"
-
-    const-string v2, "Not Samsung"
-
-    invoke-static {p1, v2}, Lj3/e;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    move p1, v1
-
-    goto :goto_0
-
-    :cond_0
-    const-string p1, "is_enable_debug_log"
-
-    invoke-static {p1, v1}, Lcom/sec/spp/common/pref/CommonPrefProvider;->b(Ljava/lang/String;Z)Z
-
-    move-result p1
+    # Always return true - space is always supported
+    const/4 p1, 0x1
 
     :goto_0
     sget v2, Lk3/g;->managerSpaceLayout:I
@@ -582,11 +562,8 @@
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const-string p1, "test_activity"
-
-    invoke-static {p1, v1}, Lcom/sec/spp/common/pref/CommonPrefProvider;->b(Ljava/lang/String;Z)Z
-
-    move-result p1
+    # Always enable test mode menu - bypass preference check
+    const/4 p1, 0x1
 
     if-eqz p1, :cond_2
 
