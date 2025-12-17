@@ -109,18 +109,18 @@
         </receiver>
         <provider android:authorities="com.sec.spp.provider" android:exported="true" android:name="com.sec.spp.push.provider.PushClientProvider" android:writePermission="com.sec.spp.permission.PUSH_SERVICE_PROVIDER"/>
         <service android:exported="true" android:name="com.sec.spp.push.dlc.writer.WriterService"/>
-        <activity android:enabled="false" android:label="Activity Select" android:name="com.sec.spp.push.ActivitySelect" android:screenOrientation="portrait"/>
-        <activity android:enabled="false" android:label="PushSvc" android:name="com.sec.spp.push.PushClientActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="true" android:label="Activity Select" android:name="com.sec.spp.push.ActivitySelect" android:screenOrientation="portrait"/>
+        <activity android:enabled="true" android:label="PushSvc" android:name="com.sec.spp.push.PushClientActivity" android:screenOrientation="portrait"/>
         <receiver android:exported="false" android:name="com.sec.spp.push.receiver.SppPolicyReceiver">
             <intent-filter>
                 <action android:name="com.samsung.android.sdk.smp.SPS_POLICY_ACTION"/>
             </intent-filter>
         </receiver>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
-        <activity android:enabled="false" android:label="Runa Activity" android:name="com.sec.spp.runa.activity.RunaActivity" android:screenOrientation="portrait"/>
-        <activity android:enabled="false" android:label="Runa Collection Data" android:name="com.sec.spp.runa.activity.RunaCollectActivity" android:screenOrientation="portrait"/>
-        <activity android:enabled="false" android:label="Runa Policy" android:name="com.sec.spp.runa.activity.RunaPolicyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
-        <activity android:enabled="false" android:label="Runa App Usage Raw Data" android:name="com.sec.spp.runa.activity.RunaAppUsageActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="true" android:label="Runa Activity" android:name="com.sec.spp.runa.activity.RunaActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="true" android:label="Runa Collection Data" android:name="com.sec.spp.runa.activity.RunaCollectActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="true" android:label="Runa Policy" android:name="com.sec.spp.runa.activity.RunaPolicyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:enabled="true" android:label="Runa App Usage Raw Data" android:name="com.sec.spp.runa.activity.RunaAppUsageActivity" android:screenOrientation="portrait"/>
         <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.runa.receiver.RunaPolicyBroadcastReceiver" android:process=":remoteRuna">
             <intent-filter>
                 <action android:name="com.samsung.android.sdk.smp.SPS_POLICY_ACTION"/>
@@ -139,7 +139,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-        <activity android:enabled="false" android:label="Smpc Activity" android:name="com.sec.spp.smpc.activity.SmpcActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="true" android:label="Smpc Activity" android:name="com.sec.spp.smpc.activity.SmpcActivity" android:screenOrientation="portrait"/>
         <receiver android:exported="false" android:name="com.sec.spp.smpc.receiver.SmpcSdkEventReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
