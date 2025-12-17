@@ -335,29 +335,36 @@
 
     if-eqz v1, :cond_8
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    # Modified: Generate random device ID as fallback when other methods fail
+    const-string v1, "getDeviceIdByType. Device Id is empty. Generating random ID as fallback. type:"
 
-    const-string v2, "getDeviceIdByType. Device Id is empty. type:"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lj3/e;->c(Ljava/lang/String;Ljava/lang/String;)V
 
+    # Generate random device ID
+    invoke-static {}, Lj3/d;->e()Ljava/lang/String;
+
+    move-result-object v2
+
+    # Return Pair with random ID and type 4
     new-instance v0, Landroid/util/Pair;
+
+    const/4 p0, 0x4
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    const-string v1, ""
-
-    invoke-direct {v0, v1, p0}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, v2, p0}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object v0
 
