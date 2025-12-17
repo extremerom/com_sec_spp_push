@@ -41,10 +41,8 @@
                     <Button android:id="@id/btnLocal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Local cache" android:textAllCaps="false" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@color/text_item_background" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/runa_default_margin">
-                <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:gravity="top" android:id="@id/tvResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
-                </ScrollView>
+            <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@color/text_item_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/runa_default_margin">
+                <TextView android:gravity="top" android:id="@id/tvResult" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
