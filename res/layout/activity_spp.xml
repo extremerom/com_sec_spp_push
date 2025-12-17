@@ -61,9 +61,7 @@
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout android:layout_gravity="bottom" android:background="@color/spp_text_item_background" android:layout_marginTop="@dimen/spp_default_margin" style="@style/spp_section_body_item_align_horizontal">
-                <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:gravity="top" android:id="@id/tvSppResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
-                </ScrollView>
+                <TextView android:gravity="top" android:id="@id/tvSppResult" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
