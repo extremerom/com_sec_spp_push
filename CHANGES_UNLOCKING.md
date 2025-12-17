@@ -13,7 +13,7 @@ The original issue requested:
 
 ## Changes Made
 
-### 1. ManagerSpaceActivity.smali
+### 1. ManagerSpaceActivity.smali - Space Support
 
 **File:** `smali/com/sec/spp/push/ManagerSpaceActivity.smali`
 
@@ -70,6 +70,43 @@ const/4 p1, 0x1
 - ✅ Space management now works on all devices, not just Samsung
 - ✅ No "Not Supported" dialog will appear
 - ✅ All debug and management features are accessible
+
+### 1b. ManagerSpaceActivity.smali - TestMode Menu
+
+**File:** `smali/com/sec/spp/push/ManagerSpaceActivity.smali`
+
+**Location:** Lines 565-568 in the `onCreate()` method
+
+**Original Code:**
+```smali
+const-string p1, "test_activity"
+
+invoke-static {p1, v1}, Lcom/sec/spp/common/pref/CommonPrefProvider;->b(Ljava/lang/String;Z)Z
+
+move-result p1
+
+if-eqz p1, :cond_2
+```
+
+**Modified Code:**
+```smali
+# Always enable test mode menu - bypass preference check
+const/4 p1, 0x1
+
+if-eqz p1, :cond_2
+```
+
+**Explanation:**
+- The original code checked the "test_activity" preference to determine if test mode should be shown
+- If the preference was false/disabled, it would skip the test mode UI entirely
+- The modified code bypasses the preference check and always sets `p1 = 1` (true)
+- This ensures the TestMode menu is always visible
+
+**Impact:**
+- ✅ TestMode menu is now permanently visible
+- ✅ "Show Activity" button is accessible (launches ActivitySelect)
+- ✅ "Set Test Mode" button is accessible (toggles test mode on/off)
+- ✅ Test and debug features are always available
 
 ### 2. AndroidManifest.xml
 
@@ -140,8 +177,8 @@ onCreate() → Set supported = true → Show functional UI (always)
 
 ```
  AndroidManifest.xml                              |  14 ++---
- smali/com/sec/spp/push/ManagerSpaceActivity.smali|  22 +------
- 2 files changed, 9 insertions(+), 29 deletions(-)
+ smali/com/sec/spp/push/ManagerSpaceActivity.smali|  27 +-------
+ 2 files changed, 11 insertions(+), 32 deletions(-)
 ```
 
 ## Compilation
@@ -180,9 +217,10 @@ These changes are made as per the requirements and should only be used in contro
 All requested modifications have been successfully implemented:
 - ✅ Analyzed smali code
 - ✅ Unlocked ManagerSpaceActivity
-- ✅ Made space management always supported
+- ✅ Made space management always supported (works on any device, not just Samsung)
+- ✅ Enabled TestMode menu permanently (shows test buttons without requiring preference)
 - ✅ Enabled all disabled activities
-- ✅ Minimal, surgical changes (9 insertions, 29 deletions)
+- ✅ Minimal, surgical changes (11 insertions, 32 deletions)
 - ✅ Proper smali syntax
 - ✅ No expected compilation errors
 
