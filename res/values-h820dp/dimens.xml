@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimensions for tall screens (height >= 820dp, like 2340x1080) -->
+    <dimen name="spp_default_margin">8.0dp</dimen>
+    <dimen name="spp_item_text_size">16.0dp</dimen>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Styles optimized for tall screens (height >= 820dp, like 2340x1080) -->
+    <style name="spp_section_button">
+        <item name="android:textSize">14.0dp</item>
+        <item name="android:padding">12.0dp</item>
+        <item name="android:layout_width">0.0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:minWidth">0.0dp</item>
+        <item name="android:minHeight">0.0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_marginLeft">2.0dp</item>
+        <item name="android:layout_marginRight">2.0dp</item>
+    </style>
+</resources>
