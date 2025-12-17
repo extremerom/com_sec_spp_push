@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SmpPopupTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.Material.Notification" />
+    <style name="TextAppearance.Compat.Notification.Info" parent="@android:style/TextAppearance.Material.Notification.Info" />
+    <style name="TextAppearance.Compat.Notification.Info.Media" parent="@style/TextAppearance.Compat.Notification.Info" />
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="@style/TextAppearance.Compat.Notification.Info.Media" />
+    <style name="TextAppearance.Compat.Notification.Media" parent="@style/TextAppearance.Compat.Notification" />
+    <style name="TextAppearance.Compat.Notification.Time" parent="@android:style/TextAppearance.Material.Notification.Time" />
+    <style name="TextAppearance.Compat.Notification.Time.Media" parent="@style/TextAppearance.Compat.Notification.Time" />
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.Material.Notification.Title" />
+    <style name="TextAppearance.Compat.Notification.Title.Media" parent="@style/TextAppearance.Compat.Notification.Title" />
+    <style name="Widget.Compat.NotificationActionContainer" parent="">
+        <item name="android:background">@drawable/notification_action_background</item>
+    </style>
+    <style name="Widget.Compat.NotificationActionText" parent="">
+        <item name="android:textAppearance">?android:textAppearanceButton</item>
+        <item name="android:textSize">@dimen/notification_action_text_size</item>
+        <item name="android:textColor">@color/secondary_text_default_material_light</item>
+    </style>
+    <style name="Widget.Support.CoordinatorLayout" parent="@android:style/Widget">
+        <item name="statusBarBackground">#000000</item>
+    </style>
+    <style name="spp_aom_edit_text">
+        <item name="android:textSize">@dimen/spp_item_text_size</item>
+        <item name="android:textColor">@color/spp_section_title_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">0.0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:inputType">number</item>
+    </style>
+    <style name="spp_section_body">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/spp_section_background_color</item>
+        <item name="android:padding">@dimen/spp_default_margin</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="spp_section_body_item_align_horizontal">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="spp_section_body_item_align_vertical">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="spp_section_button">
+        <item name="android:textSize">13.0dp</item>
+        <item name="android:padding">11.0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">0.0dp</item>
+        <item name="android:minHeight">0.0dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="spp_section_title">
+        <item name="android:textSize">@dimen/spp_item_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/spp_section_title_text_color</item>
+        <item name="android:background">@drawable/spp_round_background</item>
+        <item name="android:paddingLeft">@dimen/spp_default_margin</item>
+        <item name="android:paddingTop">@dimen/spp_default_margin</item>
+        <item name="android:paddingRight">@dimen/spp_default_margin</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/spp_default_margin</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="spp_switch_watch">
+        <item name="android:typeface">serif</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:padding">10.0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:switchPadding">10.0dp</item>
+    </style>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/runa_default_margin" android:layout_marginRight="@dimen/runa_default_margin">
+        <TextView android:gravity="center" android:id="@id/tvNextUploadTime" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Next upload" />
+        <TextView android:textStyle="bold" android:textColor="@color/collect_title_text_color" android:background="@drawable/round_background" android:padding="@dimen/runa_default_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SNAPSHOT DATA" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@color/collect_background_color" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/btnBasic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Basic" android:textAllCaps="false" />
+            <Button android:id="@id/btnFolder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Folder" android:textAllCaps="false" />
+            <Button android:id="@id/btnInstallFull" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Install \nFull" android:textAllCaps="false" />
+            <Button android:id="@id/btnLost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lost \nDates" android:textAllCaps="false" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/round_background" android:padding="@dimen/runa_default_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/runa_default_margin">
+            <TextView android:textStyle="bold" android:textColor="@color/collect_title_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HISTORY DATA" />
+            <TextView android:textColor="@color/collect_title_text_color" android:id="@id/tvDataSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@color/collect_background_color" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ProgressBar android:layout_gravity="center" android:id="@id/historyProgressBar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dp" style="?android:progressBarStyle" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/runa_collect_list" android:background="@color/collect_background_color" android:padding="@dimen/runa_default_margin" android:scrollbars="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:id="@id/itemTitle" android:background="@color/text_item_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dp" />
+        <LinearLayout android:background="#000000" android:layout_width="match_parent" android:layout_height="1.0px" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/runa_detail_list" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/dataProgressBar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dp" style="?android:progressBarStyle" />
+    </LinearLayout>
+</LinearLayout>

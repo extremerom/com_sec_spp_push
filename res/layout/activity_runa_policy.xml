@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TableLayout android:layout_width="match_parent" android:layout_height="match_parent" android:stretchColumns="0, 1, 2">
+                <TableRow>
+                    <Button android:id="@id/resetButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_span="1" android:text="RESET" />
+                    <Button android:id="@id/saveButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_span="3" android:text="SAVE" />
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Policy Number: " />
+                    <EditText android:id="@id/textPolicyNum" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="2" android:hint="Policy Number" />
+                    <Button android:id="@id/loadButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="1" android:text="LOAD" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="runaVer: " />
+                    <EditText android:id="@id/textRunaVer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="3" android:hint="Runa Version" android:inputType="number" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="wifi: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchWifi" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateWifi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="datasyncVer: " />
+                    <EditText android:id="@id/textDataSync" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="3" android:hint="DataSync version" android:inputType="number" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="network usage: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchNetworkUsage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateNetworkUsage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="app usage: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchUsage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateAppUsage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="aggr: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchAggr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateAggr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="install: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchInstall" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateInstall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="conn: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchConn" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateConn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="folder: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchFolder" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateFolder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IpCollectTarget: " />
+                    <Switch android:layout_gravity="start" android:id="@id/switchIpCollect" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:id="@id/stateIpCollect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="uploadPeriod: " />
+                    <EditText android:id="@id/textUploadPeriod" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="3" android:hint="Upload Period" android:inputType="number" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="allowlist: " />
+                    <EditText android:id="@id/textAllowList" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="3" android:hint="allowList" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="allowlistwild: " />
+                    <EditText android:id="@id/textAllowListWild" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="3" android:hint="allowList Wild" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="blocklist: " />
+                    <EditText android:id="@id/textBlockList" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="3" android:hint="blockList" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="blocklistwild: " />
+                    <EditText android:id="@id/textBlockListWild" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_span="3" android:hint="blockList Wild" />
+                </TableRow>
+                <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+                    <TextView android:id="@id/testTextView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

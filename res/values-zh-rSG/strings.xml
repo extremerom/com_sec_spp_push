@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_ok">确认</string>
+    <string name="manage_space">管理空间</string>
+    <string name="not_supported">不支持</string>
+    <string name="permission_description">允许应用程序访问三星推送服务</string>
+    <string name="permission_label">三星推送服务许可</string>
+</resources>

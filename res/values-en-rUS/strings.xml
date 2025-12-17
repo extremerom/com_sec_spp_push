@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_ok">OK</string>
+    <string name="chan_mkt">Marketing</string>
+    <string name="chan_ntc">Notice</string>
+    <string name="manage_space">Manage space</string>
+    <string name="not_supported">Not supported</string>
+    <string name="permission_description">Allow applications to access Samsung push service</string>
+    <string name="permission_label">Samsung push service permission</string>
+</resources>

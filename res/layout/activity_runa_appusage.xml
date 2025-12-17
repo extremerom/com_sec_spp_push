@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/runa_default_margin" android:layout_marginRight="@dimen/runa_default_margin">
+        <TextView android:textStyle="bold" android:textColor="@color/section_title_text_color" android:background="@drawable/round_background" android:padding="@dimen/runa_default_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="APP USAGE" />
+        <LinearLayout android:orientation="horizontal" android:background="@color/section_background_color" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:textColor="@color/section_title_text_color" android:id="@id/usageDateEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="Input Date (ex. 20200101)" android:layout_weight="1.0" android:inputType="date" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@color/section_background_color" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/btnCheckAppUsage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check App Usage" android:textAllCaps="false" />
+            <Button android:id="@id/btnCheckAppUsageAggr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check App Usage Aggr" android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@color/text_item_background" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/runa_default_margin">
+        <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:gravity="top" android:id="@id/tvResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

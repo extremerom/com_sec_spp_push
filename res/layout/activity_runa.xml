@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/runa_default_margin" android:layout_marginRight="@dimen/runa_default_margin">
+            <TextView android:id="@id/runaServer" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" />
+            <TextView android:textStyle="bold" android:textColor="@color/section_title_text_color" android:background="@drawable/round_background" android:padding="@dimen/runa_default_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TC SETTING" />
+            <LinearLayout android:orientation="vertical" android:background="@color/section_background_color" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <CheckBox android:textColor="@color/section_item_text_color" android:id="@id/checkboxOnRunaDebug" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RUNA debug ON" android:textAllCaps="false" />
+                    <CheckBox android:textColor="@color/section_item_text_color" android:id="@id/checkboxOnRunaFileDebug" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RUNA file debug ON" android:textAllCaps="false" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <EditText android:textColor="@color/section_title_text_color" android:id="@id/lastCollectEditText" android:layout_width="0.0dp" android:layout_height="wrap_content" android:hint="X days ago" android:layout_weight="1.0" android:inputType="number" />
+                    <Button android:id="@id/btnLastCollectDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Set last collect date" android:textAllCaps="false" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@id/btnGenMaxDateData" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Generate max date data" android:textAllCaps="false" />
+                    <Button android:id="@id/btnGenMaxSizeData" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Generate max size data" android:textAllCaps="false" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@id/btnStartRuna" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RUNA start" android:textAllCaps="false" />
+                    <Button android:id="@id/btnStopRuna" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RUNA stop" android:textAllCaps="false" />
+                    <Button android:id="@id/btnForceCollect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Force collect" android:textAllCaps="false" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textStyle="bold" android:textColor="@color/section_title_text_color" android:background="@drawable/round_background" android:padding="@dimen/runa_default_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/runa_default_margin" android:text="POLICY" />
+            <LinearLayout android:orientation="horizontal" android:background="@color/section_background_color" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@id/btnPolicy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RUNA policy" android:textAllCaps="false" />
+                <Button android:id="@id/btnWifiPriorityTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="WIFI priority Time" android:textAllCaps="false" />
+            </LinearLayout>
+            <TextView android:textStyle="bold" android:textColor="@color/section_title_text_color" android:background="@drawable/round_background" android:padding="@dimen/runa_default_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/runa_default_margin" android:text="VIEW DATA" />
+            <LinearLayout android:orientation="vertical" android:background="@color/section_background_color" android:padding="@dimen/runa_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@id/btnCollection" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Collection" android:textAllCaps="false" />
+                    <Button android:id="@id/btnAppUsage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="App Usage(Raw Data)" android:textAllCaps="false" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <Button android:id="@id/btnConnection" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Connection cache" android:textAllCaps="false" />
+                    <Button android:id="@id/btnInstall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Install cache" android:textAllCaps="false" />
+                    <Button android:id="@id/btnLocal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Local cache" android:textAllCaps="false" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@color/text_item_background" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/runa_default_margin">
+                <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:gravity="top" android:id="@id/tvResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

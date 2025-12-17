@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_ok">OK</string>
+    <string name="manage_space">Gerir espaço</string>
+    <string name="not_supported">Não suportado</string>
+    <string name="permission_description">Permitir que as aplicações acedam ao serviço de difusão Samsung</string>
+    <string name="permission_label">Autorização de serviço de difusão Samsung</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+</resources>

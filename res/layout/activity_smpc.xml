@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:id="@id/scroll_Main" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="5.0dp" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:background="@android:color/darker_gray" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Switch android:typeface="serif" android:textColor="@android:color/white" android:layout_gravity="right" android:id="@id/switchWristMode" android:padding="10.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wrist Mode enable" android:switchPadding="10.0dp" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:id="@id/btnPrintSmpcInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Smpc Info" />
+            <Button android:id="@id/btnForceInit" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Force Init" />
+            <Button android:id="@id/btnTokenRefresh" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Token Refresh" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:id="@id/btnPrintMarketings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Marketings" />
+            <Button android:id="@id/btnPrintFeedbacks" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Feedbacks" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:id="@id/btnDeleteMarketings" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Delete All Marketings" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:id="@id/btnSpsPolicy" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SPS POLICY" />
+            <Button android:id="@id/btnInitTestDevicename" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="TESTDEVICE NAME INIT" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <Button android:id="@id/btnDeviceOptinSetting" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DEVICE OPTIN SETTING" />
+            <Button android:id="@id/btnDeactivate" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DEACTIVATE" />
+        </LinearLayout>
+        <TextView android:id="@id/resultBox" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Phone mode" />
+    </LinearLayout>
+</ScrollView>

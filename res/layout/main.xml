@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/managerSpaceLayout" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/passwordLayout" android:padding="10.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="500.0dp">
+        <EditText android:id="@id/editTextNumberPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:ems="10" android:inputType="numberPassword" />
+        <Button android:layout_gravity="center" android:id="@id/buttonPasswordOk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OK" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:layout_gravity="start|bottom" android:id="@id/dumpRunaLog" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dump Runa Log" />
+        <Button android:id="@id/openWristTest" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Open Wrist Test" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:layout_gravity="start|bottom" android:id="@id/dumplog" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dump Log" />
+        <Button android:layout_gravity="end|bottom" android:id="@id/showTestActivity" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Show Activity" />
+        <Button android:layout_gravity="bottom" android:id="@id/setTestMode" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Set Test Mode" />
+    </LinearLayout>
+</LinearLayout>

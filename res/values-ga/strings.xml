@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_ok">OK</string>
+    <string name="chan_mkt">Margaíocht</string>
+    <string name="chan_ntc">Fógra</string>
+    <string name="manage_space">Bainistigh spás</string>
+    <string name="not_supported">Gan tacú</string>
+    <string name="permission_description">"Ceadaigh d'fheidhmchlár brú-sheirbhís Samsung a rochtain"</string>
+    <string name="permission_label">Cead bhrú-sheirbhís Samsung</string>
+</resources>

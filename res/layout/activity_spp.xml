@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_marginLeft="@dimen/spp_default_margin" android:layout_marginRight="@dimen/spp_default_margin" style="@style/spp_section_body_item_align_vertical">
+            <LinearLayout android:background="@android:color/darker_gray" android:visibility="gone" style="@style/spp_section_body_item_align_vertical">
+                <Switch android:id="@id/sppSwitchWristMode" android:text="Wrist Mode enable" style="@style/spp_switch_watch" />
+            </LinearLayout>
+            <TextView android:id="@id/tvSppCountryCode" android:padding="@dimen/spp_default_margin" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="CountryIsoCode: " />
+            <TextView android:text="Device Token, Device Id" style="@style/spp_section_title" />
+            <LinearLayout style="@style/spp_section_body">
+                <LinearLayout style="@style/spp_section_body_item_align_horizontal">
+                    <Button android:id="@id/btnShowDeviceId" android:text="Show\nDeviceId" style="@style/spp_section_button" />
+                    <Button android:textColor="@color/spp_reset_button" android:id="@id/btnResetDeviceId" android:text="Reset\nDeviceId" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnShowDeviceToken" android:text="Show\nDeviceToken" style="@style/spp_section_button" />
+                    <Button android:textColor="@color/spp_reset_button" android:id="@id/btnResetDeviceToken" android:text="Reset\nDeviceToken" style="@style/spp_section_button" />
+                </LinearLayout>
+                <LinearLayout style="@style/spp_section_body_item_align_horizontal">
+                    <Button android:id="@id/btnSetDeviceIdTypeImei0" android:text="Set Id Type\nIMEI 0" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnSetDeviceIdTypeImei1" android:text="Set Id Type\nIMEI 1" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnSetDeviceIdTypeRandom" android:text="Set Id Type\nRandom" style="@style/spp_section_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:text="Prov, Init, Ping" style="@style/spp_section_title" />
+            <LinearLayout style="@style/spp_section_body">
+                <LinearLayout style="@style/spp_section_body_item_align_horizontal">
+                    <Button android:id="@id/btnShowProvInfo" android:text="Show ProvInfo" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnDoProv" android:text="Do Prov" style="@style/spp_section_button" />
+                    <Button android:textColor="@color/spp_reset_button" android:id="@id/btnResetProvInfo" android:text="Reset ProvInfo" style="@style/spp_section_button" />
+                </LinearLayout>
+                <LinearLayout style="@style/spp_section_body_item_align_horizontal">
+                    <Button android:id="@id/btnShowPingValue" android:text="Show PingValue" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnReInit" android:text="Do ReInit" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnBlockInit" android:text="Block Init" style="@style/spp_section_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:text="Reg DB" style="@style/spp_section_title" />
+            <LinearLayout style="@style/spp_section_body">
+                <LinearLayout style="@style/spp_section_body_item_align_horizontal">
+                    <Button android:id="@id/btnShowRegDB" android:text="Show\nRegDB" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnRegSample" android:text="Reg\nSample" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnDeregSample" android:text="Dereg\nSample" style="@style/spp_section_button" />
+                    <Button android:textColor="@color/spp_reset_button" android:id="@id/btnResetRegDB" android:text="Reset\nRegDB" style="@style/spp_section_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:text="Eos" style="@style/spp_section_title" />
+            <LinearLayout style="@style/spp_section_body">
+                <LinearLayout style="@style/spp_section_body_item_align_horizontal">
+                    <Button android:id="@id/btnEosOn" android:text="Eos On" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnEosOff" android:text="Eos Off" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnSetEosStandBy" android:text="Set EosStandBy(90 days)" style="@style/spp_section_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:text="Etc Event" style="@style/spp_section_title" />
+            <LinearLayout style="@style/spp_section_body">
+                <LinearLayout style="@style/spp_section_body_item_align_horizontal">
+                    <Button android:id="@id/btnKillSppProcess" android:text="Kill\nSppProcess" style="@style/spp_section_button" />
+                    <Button android:id="@id/btnSendBootCompleteEvent" android:text="Send\nBoot event" style="@style/spp_section_button" />
+                    <EditText android:id="@id/aomMinuteEditText" android:hint="Input\nAom min" style="@style/spp_aom_edit_text" />
+                    <Button android:id="@id/btnSendAomEvent" android:text="Send\nAomEvent" style="@style/spp_section_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="bottom" android:background="@color/spp_text_item_background" android:layout_marginTop="@dimen/spp_default_margin" style="@style/spp_section_body_item_align_horizontal">
+                <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:gravity="top" android:id="@id/tvSppResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
