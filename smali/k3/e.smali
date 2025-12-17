@@ -386,11 +386,8 @@
 
     if-eqz v3, :cond_5
 
-    const-string v2, "PHONE. fail.No DeviceToken"
-
-    invoke-virtual {v0, v2}, Lcom/sec/spp/push/PushClientActivity;->b(Ljava/lang/String;)V
-
-    goto :goto_1
+    # Modified: Show placeholder instead of error when token is empty
+    const-string v2, "(empty - not provisioned yet)"
 
     :cond_5
     new-instance v3, Ljava/lang/StringBuilder;
@@ -407,7 +404,6 @@
 
     invoke-virtual {v0, v2}, Lcom/sec/spp/push/PushClientActivity;->a(Ljava/lang/String;)V
 
-    :goto_1
     return-void
 
     :pswitch_6
