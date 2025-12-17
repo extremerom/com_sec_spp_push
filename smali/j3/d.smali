@@ -335,7 +335,7 @@
 
     if-eqz v1, :cond_8
 
-    ; Modified: Generate random device ID as fallback when other methods fail
+    # Modified: Generate random device ID as fallback when other methods fail
     const-string v1, "getDeviceIdByType. Device Id is empty. Generating random ID as fallback. type:"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -350,12 +350,12 @@
 
     invoke-static {v0, v1}, Lj3/e;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    ; Generate random device ID
+    # Generate random device ID
     invoke-static {}, Lj3/d;->e()Ljava/lang/String;
 
     move-result-object v2
 
-    ; Return Pair with random ID and type 4
+    # Return Pair with random ID and type 4
     new-instance v0, Landroid/util/Pair;
 
     const/4 p0, 0x4

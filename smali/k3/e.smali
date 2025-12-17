@@ -386,7 +386,7 @@
 
     if-eqz v3, :cond_5
 
-    ; Modified: Show placeholder instead of error when token is empty
+    # Modified: Show placeholder instead of error when token is empty
     const-string v2, "(empty - not provisioned yet)"
 
     :cond_5
