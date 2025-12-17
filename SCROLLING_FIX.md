@@ -1,7 +1,7 @@
 # Fix for Screen Scrolling Issue
 
 ## Problem Statement (Original in Spanish)
-"Mejoro pero ahora nl puedo deslizar toda la pantakl hacia attiba ni hacia abajo"
+"Mejoro pero ahora no puedo deslizar toda la pantalla hacia arriba ni hacia abajo"
 
 Translation: "It improved but now I cannot slide the entire screen up or down"
 
