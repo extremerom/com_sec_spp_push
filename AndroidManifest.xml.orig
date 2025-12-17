@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" package="com.sec.spp.push" platformBuildVersionCode="35" platformBuildVersionName="15">
+    <permission android:description="@string/permission_description" android:label="@string/permission_label" android:name="com.sec.spp.permission.PUSH_SERVICE_PROVIDER"/>
+    <permission android:description="@string/permission_description" android:label="@string/permission_label" android:name="com.sec.spp.push.permission.AOM_KEEPALIVE" android:protectionLevel="signature"/>
+    <permission android:name="com.sec.dlc.permission.DLC_REQUEST" android:protectionLevel="signature"/>
+    <permission android:name="com.sec.spp.permission.SEND" android:protectionLevel="signature"/>
+    <permission android:name="com.sec.spp.push.permission.REQUEST" android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:maxSdkVersion="25" android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.REAL_GET_TASKS"/>
+    <uses-permission android:name="com.sec.spp.permission.PUSH_SERVICE_PROVIDER"/>
+    <uses-permission android:name="com.sec.spp.push.permission.AOM_KEEPALIVE"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-permission android:name="com.sec.dlc.permission.DLC_REQUEST"/>
+    <uses-permission android:name="com.sec.spp.permission.SEND"/>
+    <uses-permission android:name="com.sec.spp.permission.TOKEN_a1a30b694300dac6f59ae7b791d9eef52f677d5a5fe53412b7608126d463248f21f62f60c9bc92da81138bf6f292302d960c7273f648e5596bc9fea9ca594701e696c0917204658ac9f0e74745807472e9d3e9977f667274ee768334b7f9004f9a0046decafe7e068ad420d39e629d727f6b28195b118d7f7a4230be62243bd1"/>
+    <uses-permission android:name="com.sec.spp.permission.TOKEN_93826e86cec89c5a525ae83ddf9ebd98ecc233c92e8756bc704afa2d0778c64fdb5fef0d4cf09b8d73963b6df482827430806db3a69e587adc1c167cc50e7207453c58ea58cad7caaef5646b8deb9556378af5867696aa51fbca0e2f918d7d12a6f0b7acd5bba2d48c6688ee2089b816ad6fb0bc395f6986b71129090f423d3d"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="com.samsung.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.samsung.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <permission android:name="com.sec.spp.push.permission.SMP_LANDING_PROVIDER" android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="com.samsung.android.samsungaccount.permission.ACCOUNT_MANAGER"/>
+    <uses-permission android:name="com.samsung.android.dbsc.permission.BROADCAST"/>
+    <uses-permission android:name="com.samsung.android.dbsc.permission.LAUNCH"/>
+    <uses-permission android:name="com.sec.spp.push.permission.SMP_LANDING_PROVIDER"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <queries>
+        <package android:name="com.samsung.android.smp.register"/>
+        <package android:name="com.sec.spp.push"/>
+    </queries>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:defaultToDeviceProtectedStorage="true" android:directBootAware="true" android:extractNativeLibs="false" android:icon="@drawable/icon" android:label="Samsung Push Service" android:manageSpaceActivity="ManagerSpaceActivity" android:name="com.sec.spp.push.PushClientApplication" android:supportsRtl="true">
+        <meta-data android:name="com.sec.android.app.blockdisabling" android:value="true"/>
+        <service android:exported="false" android:name="com.sec.spp.push.PushClientService"/>
+        <service android:exported="true" android:name="com.sec.spp.push.RequestService">
+            <intent-filter>
+                <action android:name="com.sec.spp.push.PUSH_CLIENT_SERVICE_ACTION"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.sec.spp.push.monitor.SystemStateMonitorService"/>
+        <activity android:label="Samsung Push Service" android:name="com.sec.spp.push.ManagerSpaceActivity"/>
+        <provider android:authorities="com.sec.spp.push.file.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <receiver android:exported="true" android:name="com.sec.spp.push.StartupReceiver">
+            <intent-filter>
+                <action android:name="com.sec.spp.action.SPP_REQUEST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.monitor.SystemStateMonitor">
+            <intent-filter>
+                <action android:name="spp.system.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+                <action android:name="com.samsung.intent.action.EMERGENCY_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.heartbeat.HeartBeat"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.ProvAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.sec.spp.push.receiver.PROVISIONING_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.sec.spp.push.receiver.AomMonitor">
+            <intent-filter>
+                <action android:name="com.skt.aom.intent.receive.KEEP_ALIVE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.ConnectionStateCheckReceiver">
+            <intent-filter>
+                <action android:name="com.sec.spp.push.ACTION_CONNECTION_STATE_CHECK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.RegistrationNotiReceiver"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.ProviderInfoReceiver"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.SendAckRequestReceiver"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.RandomDeviceIdReqReceiver"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.RandomDeviceIdRespReceiver"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.PackageRemoveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.push.receiver.PackageUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.sec.spp.push.receiver.BackOffExpireReceiver"/>
+        <receiver android:exported="true" android:name="com.sec.spp.push.receiver.SessionRefreshRequestReceiver" android:permission="com.sec.spp.push.permission.REQUEST">
+            <intent-filter>
+                <action android:name="com.sec.spp.push.REQUEST_SESSION_REFRESH"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.sec.spp.push.receiver.SaSigninClickReceiver" android:permission="com.osp.app.signin.SIGNIN_CLICK_BROADCAST_PERMISSION">
+            <intent-filter>
+                <action android:name="com.samsung.account.SIGNIN_CLICK_SAMSUNGACCOUNT"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.sec.spp.provider" android:exported="true" android:name="com.sec.spp.push.provider.PushClientProvider" android:writePermission="com.sec.spp.permission.PUSH_SERVICE_PROVIDER"/>
+        <service android:exported="true" android:name="com.sec.spp.push.dlc.writer.WriterService"/>
+        <activity android:enabled="false" android:label="Activity Select" android:name="com.sec.spp.push.ActivitySelect" android:screenOrientation="portrait"/>
+        <activity android:enabled="false" android:label="PushSvc" android:name="com.sec.spp.push.PushClientActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.sec.spp.push.receiver.SppPolicyReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.android.sdk.smp.SPS_POLICY_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:enabled="false" android:label="Runa Activity" android:name="com.sec.spp.runa.activity.RunaActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="false" android:label="Runa Collection Data" android:name="com.sec.spp.runa.activity.RunaCollectActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="false" android:label="Runa Policy" android:name="com.sec.spp.runa.activity.RunaPolicyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:enabled="false" android:label="Runa App Usage Raw Data" android:name="com.sec.spp.runa.activity.RunaAppUsageActivity" android:screenOrientation="portrait"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.runa.receiver.RunaPolicyBroadcastReceiver" android:process=":remoteRuna">
+            <intent-filter>
+                <action android:name="com.samsung.android.sdk.smp.SPS_POLICY_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.sec.spp.runa.receiver.RunaSystemEventReceiver">
+            <intent-filter>
+                <action android:name="spp.system.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="com.sec.spp.runa.RECEIVER_ACTION_COLLECT_ALARM"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.sec.spp.runa.service.RunaService" android:process=":remoteRuna"/>
+        <service android:exported="false" android:name="com.sec.spp.smpc.service.SmpcSdkFcmService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:enabled="false" android:label="Smpc Activity" android:name="com.sec.spp.smpc.activity.SmpcActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.sec.spp.smpc.receiver.SmpcSdkEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="com.samsung.android.sdk.smp.pushRegistrationResult"/>
+                <action android:name="com.samsung.android.sdk.smp.smpInitializeResult"/>
+                <action android:name="com.samsung.android.sdk.smp.smpEvent"/>
+                <action android:name="com.samsung.android.sdk.smp.pushTokenChanged"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.sec.spp.smpc.provider" android:exported="false" android:name="com.sec.spp.smpc.provider.SmpcProvider"/>
+        <receiver android:exported="true" android:name="com.sec.spp.smpc.receiver.SmpcAccountSignInReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.account.SAMSUNGACCOUNT_SIGNIN_COMPLETED"/>
+                <action android:name="com.samsung.account.SAMSUNGACCOUNT_SIGNOUT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.sec.spp.smpc.receiver.SmpcDBSCOptInChangedReceiver" android:permission="com.samsung.android.dbsc.permission.BROADCAST">
+            <intent-filter>
+                <action android:name="com.samsung.android.dbsc.MARKETING_CONSENT_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.sec.spp.smpc.receiver.SmpcSdkSppReceiver" android:permission="com.sec.spp.permission.SEND">
+            <intent-filter>
+                <action android:name="1563e038015c430d"/>
+                <action android:name="com.sec.spp.RegistrationChangedAction"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.sec.spp.smpc.receiver.SmpcSystemStateMonitor">
+            <intent-filter>
+                <action android:name="spp.system.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.sec.spp.smpc.RECEIVER_ACTION_INIT_ALARM"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.samsung.android.sdk.smp.SmpJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.samsung.android.sdk.smp.SmpService"/>
+        <receiver android:exported="false" android:name="com.samsung.android.sdk.smp.SmpReceiver"/>
+        <receiver android:exported="true" android:name="com.samsung.android.sdk.smp.SmpSAReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.account.SAMSUNGACCOUNT_SIGNIN_COMPLETED"/>
+                <action android:name="com.samsung.account.SAMSUNGACCOUNT_SIGNOUT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.samsung.android.sdk.smp.SmpPopupActivity" android:theme="@style/SmpPopupTheme"/>
+        <receiver android:name="com.samsung.android.sdk.smp.spsclient.SpsReceiver"/>
+        <meta-data android:name="firebase_messaging_auto_init_enabled" android:value="false"/>
+        <meta-data android:name="firebase_analytics_collection_enabled" android:value="false"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.sec.spp.common.receiver.SystemBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-2876223612050256~8933711651"/>
+        <provider android:authorities="com.sec.spp.common.pref.provider" android:exported="false" android:name="com.sec.spp.common.pref.CommonPrefProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.sec.spp.push.firebaseinitprovider" android:directBootAware="true" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <provider android:authorities="com.sec.spp.push.mobileadsinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.android.gms.ads.MobileAdsInitProvider"/>
+        <provider android:authorities="com.sec.spp.push.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <meta-data android:name="com.samsung.android.sdk.smp.sdkv" android:value="3.3.13.0"/>
+        <meta-data android:name="com.samsung.android.sdk.smp.sdkvint" android:value="3031300"/>
+        <meta-data android:name="SPDE.build.signature" android:value="e1c34b21706ee8af1cc2f8f56cc695cb350ff9d8/168107536/basic-release/SPPPushClient-300200-3.4.24"/>
+        <meta-data android:name="SPDE.env.version" android:value="8.4.2/G35.1.16/1.1.19"/>
+    </application>
+</manifest>
